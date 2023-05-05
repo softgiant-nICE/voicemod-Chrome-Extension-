@@ -1,0 +1,19 @@
+/* Mini popup styles */
+
+#soundboard-mini-popup {
+  width: 400px;
+  height: 70px;
+  position: fixed;
+  z-index: 999999999999;
+  right: 20px;
+  top: 20px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translate(0px, 0px);
+  transition: all 0.4s ease;
+}
+
+#soundboard-mini-popup.chromane-hide {
+  transform: translate(calc(100% + 30px), 0px);
+}

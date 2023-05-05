@@ -1,0 +1,51 @@
+{
+	"name": "Voicemod",
+	"description": "Save time and money by automating repetitive tasks and extending web apps your business relies on.",
+	"version": "0.0.1.6",
+	"manifest_version": 3,
+	"icons": {
+		"128": "/img/logo.png"
+	},
+	"background": {
+		"service_worker": "/js/background.js"
+	},
+	"action": {
+		"default_popup": "/pages/popup/index.html",
+		"default_icons": {
+			"16": "/img/logo_grey.png"
+		}
+	},
+	"content_scripts": [
+		{
+			"run_at": "document_end",
+			"all_frames": false,
+			"matches": [
+				"https://*/*"
+			],
+			"js": [
+				"/js/content.js"
+			],
+			"css": [
+				"/css/content.css"
+			]
+		}
+	],
+	"permissions": [
+		"tabs"
+	],
+	"host_permissions": [
+		"https://*/*",
+		"http://*/*"
+	],
+	"web_accessible_resources": [
+		{
+			"resources": [
+				"*"
+			],
+			"matches": [
+				"https://*/*"
+			],
+			"extension_ids": []
+		}
+	]
+}
